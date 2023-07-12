@@ -1,10 +1,17 @@
 //
-let x: unknown;
-x = 100;
-x = "Luiz";
-x = 900;
-x = 10;
+export function addOrConcat(
+  a: number | string | boolean,
+  b: number | string | boolean,
+): number | string {
+  if (typeof a === "number" && typeof b === "number") return a + b;
+  return `${a}${b}`;
+}
 
-const y = 800;
-
-if (typeof x === "number") console.log(x + y);
+console.log(addOrConcat(10, 20));
+console.log(addOrConcat("10", "20"));
+console.log(addOrConcat(10, "20"));
+console.log(addOrConcat("10", 20));
+console.log(addOrConcat(true, 20));
+console.log(addOrConcat(10, true));
+console.log(addOrConcat(true, true));
+console.log(addOrConcat('10', true));

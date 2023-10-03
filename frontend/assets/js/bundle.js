@@ -29,6 +29,7 @@ form.addEventListener("submit", function (event) {
     if (shouldSendForm(this)) {
         // form.submit()
         console.log("Formulário enviado com sucesso!");
+        cleanFields();
     }
 });
 function checkForEmptyFields(...inputs) {
@@ -57,6 +58,10 @@ function showErrorMessege(input, msg) {
     const errorMessege = formFields.querySelector(".error-message");
     errorMessege.innerText = msg;
     formFields.classList.add(SHOW_ERROR_MESSAGES);
+}
+function cleanFields() {
+    const inputList = form.querySelectorAll("input");
+    inputList.forEach((input) => (input.value = ""));
 }
 function shouldSendForm(form) {
     let send = true;

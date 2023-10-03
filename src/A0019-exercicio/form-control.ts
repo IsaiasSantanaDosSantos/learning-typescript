@@ -14,9 +14,10 @@ form.addEventListener("submit", function (event: Event) {
   checkForEmptyFields(username, email, password, password2);
   checkEmail(email);
   checkEqualPasswords(password, password2);
-  if(shouldSendForm(this)) {
+  if (shouldSendForm(this)) {
     // form.submit()
-    console.log("Formulário enviado com sucesso!")
+    console.log("Formulário enviado com sucesso!");
+    cleanFields();
   }
 });
 
@@ -51,6 +52,11 @@ function showErrorMessege(input: HTMLInputElement, msg: string): void {
   ) as HTMLSpanElement;
   errorMessege.innerText = msg;
   formFields.classList.add(SHOW_ERROR_MESSAGES);
+}
+
+function cleanFields(): void {
+  const inputList = form.querySelectorAll("input");
+  inputList.forEach((input) => (input.value = ""));
 }
 
 function shouldSendForm(form: HTMLFormElement): boolean {

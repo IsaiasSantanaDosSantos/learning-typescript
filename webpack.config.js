@@ -1,23 +1,25 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  mode: 'development',
-  entry: './src/A0018- webpack/index.ts',
+  mode: "development",
+  entry: "./src/A0018- webpack/index.ts",
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        loader: "ts-loader",
         exclude: /node_modules/,
+        options: { configFile: "tsconfig.frontend.json" }
+
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist', 'assets', 'js'),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "frontend", "assets", "js"),
   },
-  devtool: 'source-map'
+  devtool: "source-map",
 };

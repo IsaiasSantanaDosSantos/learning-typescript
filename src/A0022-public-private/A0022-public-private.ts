@@ -1,5 +1,5 @@
 export class Empresa {
-  readonly nome: string; //  public não necessário se não colocar é por padrão.
+  public readonly nome: string; // public não necessário se não colocar é por padrão.
   private readonly colaboradores: Colaborador[] = [];
   protected readonly cnpj: string;
 
@@ -17,7 +17,6 @@ export class Empresa {
       console.log(colaborador);
     }
   }
-
 }
 
 export class Colaborador {

@@ -1,3 +1,4 @@
+// SUPER CLASSE ↓
 export class Pessoa {
   constructor(
     public nome: string,
@@ -19,11 +20,27 @@ export class Pessoa {
   }
 }
 
+//Sub classe ↓
 export class Aluno extends Pessoa {
+  constructor(
+    nome: string,
+    sobrenome: string,
+    idade: number,
+    cpf: string,
+    public sala: string,
+  ) {
+    super(nome, sobrenome, idade, cpf);
+  }
+
   getNomeCompleto(): string {
-    return "Isso vem do aluno " + this.nome + " " + this.sobrenome;
+    // return "Isso vem do aluno " + this.nome + " " + this.sobrenome;
+    console.log("fazendo algo antes");
+    const result = super.getNomeCompleto();
+    return result + " Heyyyyyy!";
   }
 }
+
+//Sub classe ↓
 export class Cliente extends Pessoa {
   getNomeCompleto(): string {
     return " Isso vem do cliente " + this.nome + " " + this.sobrenome;
@@ -31,9 +48,10 @@ export class Cliente extends Pessoa {
 }
 
 const pessoa = new Pessoa("Luiz", "Miranda", 30, "332.225.225955");
-const aluno = new Aluno("Luiz", "Miranda", 30, "332.225.225955");
+const aluno = new Aluno("Luiz", "Miranda", 30, "332.225.225955", "0001");
 const client = new Cliente("Luiz", "Miranda", 30, "332.225.225955");
 
 console.log(pessoa.getNomeCompleto());
 console.log(aluno.getNomeCompleto());
 console.log(client.getNomeCompleto());
+console.log(aluno);

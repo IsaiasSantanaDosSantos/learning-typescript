@@ -1,44 +1,25 @@
-export class Carro {
-  private readonly motor = new Motor();
+type TipoNome = {
+  nome: string;
+};
 
-  ligar(): void {
-    this.motor.ligar();
-  }
+type TipoSobrenome = {
+  sobrenome: string;
+};
 
-  acelerar(): void {
-    this.motor.acelerar();
-  }
+type TipoNomeCompleto = {
+  nomeCompleto: () => string;
+};
 
-  parar(): void {
-    this.motor.parar();
-  }
-
-  desligar(): void {
-    this.motor.desligar();
-  }
-}
-
-export class Motor {
-  ligar(): void {
-    console.log("Motor está ligado...");
-  }
-
-  acelerar(): void {
-    console.log("Motor está acelerando...");
-  }
-
-  parar(): void {
-    console.log("Motor está parado...");
-  }
-
-  desligar(): void {
-    console.log("Motor está desligado...");
+export class Pessoa implements TipoNome, TipoSobrenome, TipoNomeCompleto {
+  constructor(
+    public nome: string,
+    public sobrenome: string,
+  ) {}
+  nomeCompleto(): string {
+    return this.nome + " " + this.sobrenome;
   }
 }
 
-const carro = new Carro();
+const pessoa = new Pessoa("Luiz", "Miranda");
 
-carro.ligar();
-carro.acelerar();
-carro.parar();
-carro.desligar();
+console.log(pessoa.nomeCompleto());

@@ -29,9 +29,9 @@ export class VotationApp {
   }
 
   showVotations(): void {
-    for (const votattion of this.votations) {
-      console.log(votattion.details);
-      for (const votatitionOption of votation1.votationOptions) {
+    for (const votation of this.votations) {
+      console.log(votation.details);
+      for (const votatitionOption of votation.votationOptions) {
         console.log(votatitionOption.option, votatitionOption.numberOfVotes);
       }
       console.log("###");
@@ -56,13 +56,15 @@ const votation2 = new Votation("Qual a sua cor favorita?");
 votation2.addVotationOption({ option: "Rosa", numberOfVotes: 0 });
 votation2.addVotationOption({ option: "Amarelo", numberOfVotes: 0 });
 votation2.addVotationOption({ option: "Vermelho", numberOfVotes: 0 });
+votation2.addVotationOption({ option: "Roxo", numberOfVotes: 0 });
+votation2.addVotationOption({ option: "Verde", numberOfVotes: 0 });
 
+votation2.vote(4);
 votation2.vote(1);
-votation2.vote(1);
-votation2.vote(0);
-votation2.vote(0);
+votation2.vote(3);
 votation2.vote(0);
 votation2.vote(2);
+votation2.vote(4);
 
 const votationApp = new VotationApp();
 votationApp.addVotation(votation1);

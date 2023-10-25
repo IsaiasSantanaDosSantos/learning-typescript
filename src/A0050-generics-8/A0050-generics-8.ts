@@ -1,5 +1,5 @@
 import { type } from "os";
-import { Pessoa } from "./../A0034-interfaces/A0034-interfaces";
+import { Pessoa } from "../A0034-interfaces/A0034-interfaces";
 
 // Record
 const objeto1: Record<string, string | number> = {

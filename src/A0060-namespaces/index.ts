@@ -1,22 +1,9 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-namespace MeuNamespace {
-  export const nomeDoNamespace = "Luiz";
+/* eslint-disable @typescript-eslint/triple-slash-reference */
+/// <reference path="modulo/modules.ts"/>
 
-  export class PessoaDoNamespace {
-    constructor(public nome: string) {}
-  }
-
-  const pessoaDoNamespace = new PessoaDoNamespace("José");
-  console.log(pessoaDoNamespace);
-
-  export namespace OutroNamespace {
-    export const nomeDoNamespace = "Novo";
-  }
-}
-
-const pessoaDoNamespace = new MeuNamespace.PessoaDoNamespace("João");
-console.log(pessoaDoNamespace);
 console.log(MeuNamespace.nomeDoNamespace);
-console.log(MeuNamespace.OutroNamespace.nomeDoNamespace);
 
-export default 1;
+/*
+Comando para compilar um arquivo ts em outro js
+px tsc src/A0060-namespaces/index.ts --outFile src/A0060-namespaces/arquivo-compilado.j
+*/

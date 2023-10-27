@@ -14,3 +14,4 @@ namespace MeuNamespace {
 }
 
 const pessoaDoNamespace = new MeuNamespace.PessoaDoNamespace("João");
+const constDoNamespace = "Const do Namespace";
